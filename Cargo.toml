@@ -1,0 +1,16 @@
+[package]
+name = "eloquentlog-desktop-gtk"
+version = "0.0.1"
+authors = ["Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>"]
+description = "The Eloquentlog desktop application by GTK."
+repository = "https://gitlab.com/eloquentlog/eloquentlog-desktop-gtk"
+keywords = []
+license = "GPL-3.0-or-later"
+autobins = false
+
+[[bin]]
+name = "eloquentlog"
+
+[dependencies]
+gio = "^0.7"
+gtk = "^0.7"
