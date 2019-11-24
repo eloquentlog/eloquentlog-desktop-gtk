@@ -5,9 +5,9 @@ Eloquentlog Desktop GTK
 
    Eloquentlog
 
-	 ╔╦╗┌─┐┌─┐┬┌─┌┬┐┌─┐┌─┐  ╔═╗╔╦╗╦╔═
-	  ║║├┤ └─┐├┴┐ │ │ │├─┘  ║ ╦ ║ ╠╩╗
-	 ═╩╝└─┘└─┘┴ ┴ ┴ └─┘┴    ╚═╝ ╩ ╩ ╩
+   ╔╦╗┌─┐┌─┐┬┌─┌┬┐┌─┐┌─┐  ╔═╗╔╦╗╦╔═
+    ║║├┤ └─┐├┴┐ │ │ │├─┘  ║ ╦ ║ ╠╩╗
+   ═╩╝└─┘└─┘┴ ┴ ┴ └─┘┴    ╚═╝ ╩ ╩ ╩
 
 The Eloquentlog_ desktop application by GTK.
 
@@ -27,8 +27,8 @@ License
    ┣╸ ┃  ┃ ┃┃┓┃┃ ┃┣╸ ┃┗┫ ┃ ┃  ┃ ┃┃╺┓
    ┗━╸┗━╸┗━┛┗┻┛┗━┛┗━╸╹ ╹ ╹ ┗━╸┗━┛┗━┛
 
-	 Eloquentlog Desktop GTK
-	 Copyright (c) 2019 Lupine Software LLC
+   Eloquentlog Desktop GTK
+   Copyright (c) 2019 Lupine Software LLC
 
 
 `GPL-3.0-or-later`
