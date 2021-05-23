@@ -7,9 +7,9 @@ use gio::prelude::*;
 use gtk::prelude::*;
 
 use gtk::{
-    AboutDialog, AccelGroup, Application, ApplicationWindow,
-    Label, Menu, MenuBar, MenuItem,  Orientation, WindowPosition,
-    StackBuilder, StackSidebarBuilder,
+    AboutDialog, AccelGroup, Application, ApplicationWindow, Label, Menu,
+    MenuBar, MenuItem, Orientation, WindowPosition, StackBuilder,
+    StackSidebarBuilder,
 };
 
 const WEBSITE_URL: &str =
@@ -31,24 +31,21 @@ fn build_ui(app: &Application) {
     let bar = MenuBar::new();
 
     // sidebar
-    let stack = StackBuilder::new()
-        .expand(true)
-        .visible(true)
-        .build();
+    let stack = StackBuilder::new().expand(true).visible(true).build();
     let pref_lbl = Label::new(Some("Preferences"));
     stack.add_titled(&pref_lbl, "preferences", "Preferences");
     let sidebar = StackSidebarBuilder::default().build();
     sidebar.set_stack(&stack);
 
     // file
-    let file  = MenuItem::with_label("File");
+    let file = MenuItem::with_label("File");
     let about = MenuItem::with_label("About");
     let quit = MenuItem::with_label("Quit");
 
     let menu = Menu::new();
     menu.append(&about);
     menu.append(&quit);
-   file.set_submenu(Some(&menu));
+    file.set_submenu(Some(&menu));
 
     bar.append(&file);
 
