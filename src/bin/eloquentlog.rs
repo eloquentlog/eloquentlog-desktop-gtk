@@ -9,6 +9,7 @@ use gtk::prelude::*;
 use gtk::{
     AboutDialog, AccelGroup, Application, ApplicationWindow,
     Label, Menu, MenuBar, MenuItem,  Orientation, WindowPosition,
+    StackBuilder, StackSidebarBuilder,
 };
 
 const WEBSITE_URL: &str =
@@ -29,6 +30,16 @@ fn build_ui(app: &Application) {
     // menubar
     let bar = MenuBar::new();
 
+    // sidebar
+    let stack = StackBuilder::new()
+        .expand(true)
+        .visible(true)
+        .build();
+    let pref_lbl = Label::new(Some("Preferences"));
+    stack.add_titled(&pref_lbl, "preferences", "Preferences");
+    let sidebar = StackSidebarBuilder::default().build();
+    sidebar.set_stack(&stack);
+
     // file
     let file  = MenuItem::with_label("File");
     let about = MenuItem::with_label("About");
@@ -45,7 +56,7 @@ fn build_ui(app: &Application) {
     quit.connect_activate(move |_| {
         let win = match weak.upgrade() {
             Some(o) => o,
-            None => return (),
+            None => return,
         };
         win.close();
     });
@@ -54,6 +65,7 @@ fn build_ui(app: &Application) {
     let lbl = Label::new(Some("Sample"));
     // https://gtk-rs.org/docs/gtk/trait.BoxExt.html#tymethod.pack_start
     vbox.pack_start(&bar, false, true, 0);
+    vbox.pack_start(&sidebar, false, true, 0);
     vbox.pack_start(&lbl, true, true, 0);
     win.add(&vbox);
 
