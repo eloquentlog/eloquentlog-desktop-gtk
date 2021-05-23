@@ -1,0 +1,3 @@
+Sun 23 May 2021 Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>
+	* Use GTK v3_16 APIs
+	* Update gtk-rs

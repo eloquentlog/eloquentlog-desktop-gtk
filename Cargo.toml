@@ -12,5 +12,8 @@ autobins = false
 name = "eloquentlog"
 
 [dependencies]
-gio = "^0.7"
-gtk = "^0.7"
+gio = "^0.9"
+
+[dependencies.gtk]
+version = "^0.9"
+features = ["v3_16"]

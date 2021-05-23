@@ -8,7 +8,7 @@ use gtk::prelude::*;
 
 use gtk::{
     AboutDialog, AccelGroup, Application, ApplicationWindow,
-   Label, Menu, MenuBar, MenuItem,  Orientation, WindowPosition,
+    Label, Menu, MenuBar, MenuItem,  Orientation, WindowPosition,
 };
 
 const WEBSITE_URL: &str =
@@ -30,9 +30,9 @@ fn build_ui(app: &Application) {
     let bar = MenuBar::new();
 
     // file
-    let file  = MenuItem::new_with_label("File");
-    let about = MenuItem::new_with_label("About");
-    let quit = MenuItem::new_with_label("Quit");
+    let file  = MenuItem::with_label("File");
+    let about = MenuItem::with_label("About");
+    let quit = MenuItem::with_label("Quit");
 
     let menu = Menu::new();
     menu.append(&about);
@@ -47,7 +47,7 @@ fn build_ui(app: &Application) {
             Some(o) => o,
             None => return (),
         };
-        win.destroy();
+        win.close();
     });
 
     // main
@@ -67,7 +67,7 @@ fn build_ui(app: &Application) {
         dlg.set_authors(&["Lupine Software LLC"]);
         dlg.set_transient_for(Some(&win));
         dlg.run();
-        dlg.destroy();
+        dlg.close();
     });
 }
 

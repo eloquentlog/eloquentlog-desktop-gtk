@@ -18,6 +18,12 @@ Repository
 https://gitlab.com/eloquentlog/eloquentlog-desktop-gtk
 
 
+Development
+-----------
+
+GTK ``v3_16`` APIs.
+
+
 License
 -------
 
