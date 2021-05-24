@@ -1,12 +1,28 @@
 [package]
 name = "eloquentlog-desktop-gtk"
+description = """\
+A desktop application built with GTK for Eloquentlog.\
+"""
 version = "0.0.1"
 authors = ["Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>"]
-description = "The Eloquentlog desktop application by GTK."
+edition = "2018"
+readme = "README.md"
+homepage = "https://gitlab.com/eloquentlog/eloquentlog-desktop-gtk"
+documentation = "https://gitlab.com/eloquentlog/eloquentlog-desktop-gtk"
 repository = "https://gitlab.com/eloquentlog/eloquentlog-desktop-gtk"
-keywords = []
 license = "GPL-3.0-or-later"
+keywords = ["gtk"]
+categories = ["gui"]
+
 autobins = false
+
+exclude = [
+  "Makefile",
+  "rust-toolchain",
+  ".gitignore",
+  ".clippy.toml",
+  ".rustfmt.toml",
+]
 
 [[bin]]
 name = "eloquentlog"
