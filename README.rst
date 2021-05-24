@@ -34,7 +34,7 @@ License
    ┗━╸┗━╸┗━┛┗┻┛┗━┛┗━╸╹ ╹ ╹ ┗━╸┗━┛┗━┛
 
    Eloquentlog Desktop GTK
-   Copyright (c) 2019 Lupine Software LLC
+   Copyright (c) 2019-2021 Lupine Software LLC
 
 
 `GPL-3.0-or-later`
