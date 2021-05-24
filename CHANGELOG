@@ -1,3 +1,8 @@
+Tue 25 May 2021 Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>
+	* Add .gitlab-ci.yml
+	* Enable hooks by .cargo-husky
+	* Add XML sources
+
 Sun 23 May 2021 Yasuhiro Яша Asaka <yasuhiro.asaka@grauwoelfchen.net>
 	* Use GTK v3_16 APIs
 	* Update gtk-rs
