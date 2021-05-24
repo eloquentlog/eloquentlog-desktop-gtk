@@ -17,6 +17,7 @@ categories = ["gui"]
 autobins = false
 
 exclude = [
+  ".cargo-husky",
   "Makefile",
   "rust-toolchain",
   ".gitignore",
@@ -33,3 +34,8 @@ gio = "^0.9"
 [dependencies.gtk]
 version = "^0.9"
 features = ["v3_16"]
+
+[dev-dependencies.cargo-husky]
+version = "1"
+default-features = false
+features = ["user-hooks"]
