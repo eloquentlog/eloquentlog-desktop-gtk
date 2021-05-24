@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface>
+  <object class="GtkMenuBar" id="menubar">
+    <property name="pack_direction">ltr</property>
+  </object>
+</interface>

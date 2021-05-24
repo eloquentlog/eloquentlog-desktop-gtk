@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface>
+  <object class="GtkApplicationWindow" id="window">
+    <property name="title">Eloquentlog</property>
+    <property name="window_position">center</property>
+  </object>
+</interface>
