@@ -23,6 +23,7 @@ exclude = [
   ".gitignore",
   ".clippy.toml",
   ".rustfmt.toml",
+  ".gitlab-ci.yml",
 ]
 
 [[bin]]

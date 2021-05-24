@@ -1,0 +1,86 @@
+stages:
+  - vet
+  - test
+  - build
+
+.vendor:
+  - &vendor
+    if [ ! -d "vendor" ]; then
+      make setup:vendor;
+    fi
+
+.cache: &cache
+  cache:
+    key:
+      files:
+        - Cargo.lock
+      prefix: "${CI_PROJECT_NAME}-cache-${CI_CACHE_VERSION}"
+    paths:
+      - .cargo
+      - vendor
+
+.vet-tools: &vet-tools
+  image: registry.gitlab.com/grauwoelfchen/portolan/rust-vet-tools:stable
+  before_script:
+    - rustc --version
+    - cargo --version
+    - cargo fmt --version
+    - cargo clippy --version
+    - kcov --version
+    - *vendor
+    - mkdir -p .git/hooks
+  <<: *cache
+
+.rust: &rust
+  image: registry.gitlab.com/grauwoelfchen/portolan/rust:stable
+  before_script:
+    - rustc --version
+    - cargo --version
+    - cargo fmt --version
+    - cargo clippy --version
+    - *vendor
+    - mkdir -p .git/hooks
+  <<: *cache
+
+check:
+  stage: vet
+  <<: *rust
+  script:
+    - make vet:check
+
+format:
+  stage: vet
+  <<: *rust
+  script:
+    - make vet:format
+
+lint:
+  stage: vet
+  <<: *rust
+  script:
+    - make vet:lint
+
+test:
+  stage: test
+  <<: *vet-tools
+  script:
+    - make coverage:all
+  coverage: /^(\d+(?:\.\d+)?)$/
+  except:
+    - tags
+
+build:
+  stage: build
+  <<: *rust
+  script:
+    - make build:debug
+  only:
+    - master
+
+release:
+  stage: build
+  <<: *rust
+  script:
+    - make build:release
+  only:
+    - tags
