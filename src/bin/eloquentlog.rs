@@ -45,8 +45,7 @@ fn build_ui(app: &Application) {
     let sbar = StackSidebarBuilder::default().build();
     sbar.set_stack(&stack);
 
-    // main
-    let lbl = Label::new(Some("Sample"));
+    let lbl = Label::new(Some("Start"));
 
     // https://gtk-rs.org/docs/gtk/trait.BoxExt.html#tymethod.pack_start
     let vbox = gtk::Box::new(Orientation::Vertical, 10);
