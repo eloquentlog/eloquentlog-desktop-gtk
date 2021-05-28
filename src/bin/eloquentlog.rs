@@ -8,7 +8,8 @@ use gtk::prelude::*;
 
 use gtk::{
     AboutDialog, AccelGroup, Application, ApplicationWindow, Builder, Label,
-    Menu, MenuBar, MenuItem, Orientation, StackBuilder, StackSidebarBuilder,
+    HeaderBar, Menu, MenuBar, MenuItem, Orientation, StackBuilder,
+    StackSidebarBuilder,
 };
 
 fn build_ui(app: &Application) {
@@ -31,12 +32,20 @@ fn build_ui(app: &Application) {
     menu.append(&quit);
     file.set_submenu(Some(&menu));
 
-    // menubar
-    let mbar_src = include_str!("../ui/menubar.xml");
+    // menu_bar
+    let mbar_src = include_str!("../ui/menu_bar.xml");
     let mbar: MenuBar = Builder::from_string(mbar_src)
-        .get_object("menubar")
-        .expect("couldn't get menubar");
+        .get_object("menu_bar")
+        .expect("couldn't get menu_bar");
     mbar.append(&file);
+
+    // header_bar
+    let hbar_src = include_str!("../ui/header_bar.xml");
+    let hbar: HeaderBar = Builder::from_string(hbar_src)
+        .get_object("header_bar")
+        .expect("couldn't get header_bar");
+    hbar.add(&mbar);
+    awin.set_titlebar(Some(&hbar));
 
     // sidebar
     let stack = StackBuilder::new().expand(true).visible(true).build();
@@ -49,7 +58,6 @@ fn build_ui(app: &Application) {
 
     // https://gtk-rs.org/docs/gtk/trait.BoxExt.html#tymethod.pack_start
     let vbox = gtk::Box::new(Orientation::Vertical, 10);
-    vbox.pack_start(&mbar, false, true, 0);
     vbox.pack_start(&sbar, false, true, 0);
     vbox.pack_start(&lbl, true, true, 0);
     awin.add(&vbox);
