@@ -23,6 +23,31 @@ Development
 
 GTK ``v3_16`` APIs.
 
+Notes
+~~~~~
+
+Build base Docker image
+^^^^^^^^^^^^^^^^^^^^^^^
+
+At first, install ``buildx``.
+
+.. code:: zsh
+
+   % export DOCKER_BUILDKIT=1
+   % docker build --platform=local -o . git://github.com/docker/buildx
+   % mkdir -p ~/.docker/cli-plugins
+   % mv buildx ~/.docker/cli-plugins/docker-buildx
+
+   # create a builder instance
+   % docker buildx create --use --name insecure-builder --buildkitd-flags \
+   '--allow-insecure-entitlement security.insecure'
+
+And then build it.
+
+.. code:: zsh
+
+   % make base-image
+
 
 License
 -------

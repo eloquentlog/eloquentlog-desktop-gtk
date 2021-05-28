@@ -120,6 +120,17 @@ clean: ## Remove cache and built artifacts
 	@cargo clean
 .PHONY: clean
 
+base-image:
+	# docker pull gentoo/portage:latest
+	# docker pull gentoo/stage3-amd64-nomultilib:latest
+	# docker pull grauwoelfchen/rust:stable
+	# docker pull grauwoelfchen/rust-vet-tools:stable
+	docker buildx build . \
+		--allow security.insecure \
+		--file Dockerfile \
+		--tag eloquentlog/eloquentlog-desktop-gtk-base:stable
+.PHONY: base-image
+
 runner-%: ## Run a CI job on local (on Docker)
 	@set -uo pipefail; \
 	job=$(subst runner-,,$@); \
