@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<interface>
+  <object class="GtkHeaderBar" id="header_bar">
+    <property name="show_close_button">TRUE</property>
+  </object>
+</interface>
