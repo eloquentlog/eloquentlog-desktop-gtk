@@ -30,7 +30,7 @@ exclude = [
 name = "eloquentlog"
 
 [dependencies]
-gio = "^0.9"
+gio = "^0.17"
 
 [dependencies.gtk]
 version = "^0.9"
