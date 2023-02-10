@@ -33,7 +33,7 @@ name = "eloquentlog"
 gio = "^0.9"
 
 [dependencies.gtk]
-version = "^0.9"
+version = "^0.17"
 features = ["v3_16"]
 
 [dev-dependencies.cargo-husky]
